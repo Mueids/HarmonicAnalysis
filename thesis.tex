@@ -1,0 +1,129 @@
+\documentclass[10pt,a4paper]{article}
+
+% Encodings und Fonts -----------------------------------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{microtype}
+% -------------------------------------------------------
+
+% Spracheinstellungen -----------------------------------
+% Verwende option `english` für englische Texte
+\usepackage[ngerman]{babel}
+\usepackage{csquotes}
+% -------------------------------------------------------
+
+% Bibliographie -----------------------------------------
+\usepackage[backend=biber,
+			style=numeric,
+			isbn=false,
+			doi=false
+			]{biblatex}
+\addbibresource{./content/references.bib}
+% -------------------------------------------------------
+
+% Typographie -------------------------------------------
+\renewcommand{\theenumi}{(\roman{enumi})}
+\usepackage{graphicx}
+\usepackage{setspace}
+% -------------------------------------------------------
+
+% Mathe Pakete, Einstellungen und Commands --------------
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+\numberwithin{equation}{section}
+
+\DeclareMathOperator{\N}{\mathbb{N}}
+\DeclareMathOperator{\Z}{\mathbb{Z}}
+\DeclareMathOperator{\Q}{\mathbb{Q}}
+\DeclareMathOperator{\R}{\mathbb{R}}
+\DeclareMathOperator{\F}{\mathbb{F}}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\kernel}{ker}
+\DeclareMathOperator{\im}{im}
+% -------------------------------------------------------
+
+% Theorem-Umgebungen ------------------------------------
+\usepackage{thmtools}
+
+\declaretheorem[
+	name=Theorem,
+	numberwithin=section
+	]{thm}
+\declaretheorem[
+	name=Lemma,
+	sibling=thm,
+	]{lem}
+\declaretheorem[
+	name=Proposition,
+	sibling=thm,
+	]{prop}
+\declaretheorem[
+	name=Korollar,
+	sibling=thm,
+	]{cor}
+
+\declaretheorem[
+	name=Definition,
+	style=definition,
+	numbered=no,
+	]{defin}
+
+\declaretheorem[
+	name=Bemerkung,
+	style=remark,
+	numbered=no
+	]{rem}
+\declaretheorem[
+	name=Beispiel,
+	style=remark,
+	numbered=no
+	]{exam}
+% -------------------------------------------------------
+
+% Eigene Commands ---------------------------------------
+\newcommand{\dummy}{Donaudampfschifffahrtsgesellschaft}
+% -------------------------------------------------------
+
+% Hyperref (immer am Schluss der Präambel!) -------------
+\usepackage[pdftex]{hyperref}
+\hypersetup{pdftitle={Beweis des Satz von Thales},
+			pdfauthor={Maxime Musterfrau}}
+% -------------------------------------------------------
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Beginn des Dokuments
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+% Titelei -----------------------------------------------
+\input{./content/titlepage}
+
+\newpage
+
+\thispagestyle{empty}
+
+\input{./content/abstract}
+
+\newpage
+
+\thispagestyle{empty}
+\tableofcontents
+
+\newpage
+% -------------------------------------------------------
+
+\renewcommand{\thepage}{ \arabic{page} }
+
+\setcounter{page}{1}
+\onehalfspacing
+
+\section{Abschnitt}
+\input{./content/abschnitt}
+
+\vspace{\fill}
+\printbibliography{}
+\end{document}

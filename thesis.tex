@@ -91,7 +91,7 @@
 % -------------------------------------------------------
 
 % Hyperref (immer am Schluss der Präambel!) -------------
-\usepackage[pdftex]{hyperref}
+\usepackage[pdftex,pdfpagelabels]{hyperref}
 \hypersetup{pdftitle={Beweis des Satz von Thales},
 			pdfauthor={Maxime Musterfrau}}
 % -------------------------------------------------------
@@ -102,6 +102,7 @@
 \begin{document}
 
 % Titelei -----------------------------------------------
+\hypersetup{pageanchor=false}
 \input{./content/titlepage}
 
 \newpage
@@ -112,12 +113,12 @@
 
 \newpage
 
-\thispagestyle{empty}
+%\thispagestyle{empty}
 \tableofcontents
 
 \newpage
 % -------------------------------------------------------
-
+\hypersetup{pageanchor=true}
 \renewcommand{\thepage}{ \arabic{page} }
 
 \setcounter{page}{1}

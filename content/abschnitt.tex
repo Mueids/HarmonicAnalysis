@@ -1,3 +1,33 @@
+%!TEX root = ../thesis.tex
+Im folgenden Abschnitt setzen wir die Existenz und elementare Eigenschaften der ganzen Zahlen $\Z$ voraus.
+
+\begin{thm}
+  Die Relation auf der Menge $\Z \times \Z \setminus \lbrace 0 \rbrace$, die durch
+  \[ (a, b) \sim (c, d) :\Leftrightarrow ad = cb \]
+  definiert ist, ist eine Äquivalenzrelation.
+\end{thm} 
+
+\begin{proof}
+  Seien $a$ und $b \neq 0$ ganze Zahlen, dann gilt $ab = ab$ und daher $(a, b) \sim (a, b)$, d.~h. $\sim$ ist reflexiv. Seien nun $c$ und $d \neq 0$ weitere ganze Zahlen, für die $(a, b) \sim (c, d)$ gilt, dann folgt nach der Definition der Relation die Identität $0 = ad - cb = da - bc$ und daher auch $(c, d) \sim (a, b)$.
+  
+  Sind schließlich $e$ und $f \neq 0$ weitere ganze Zahlen, für die $(c, d) \sim (e, f)$ gilt, dann muss die Gleichheit $cf = ed$ gelten.
+  Da gleichzeitig $ad = cb$ erfüllt ist, folgert man
+  \begin{equation}\label{eq:rationals}
+    0 = ad - cb = (ad - cb) e = ade - cbe = acf - cbe = c (af - eb).
+  \end{equation}
+Angenommen $c = 0$, dann müssen wegen $b, f \neq 0$ und $ad = cb = 0$ sowie $cf = ed = 0$ die Zahlen $a$ und $e$ gleich null sein. Man folgert $af = 0 = eb$ und $(a, b) \sim (e, f)$.
+  
+  Andererseits angenommen, dass $c \neq 0$, dann folgt aus der Gleichung~\ref{eq:rationals} die Identität $af - eb = 0$, da die ganzen Zahlen ein Integritätsbereich sind. Man schließt $(a, b) \sim (e, f)$.
+\end{proof}
+
+\begin{thm}\label{thm:rationals}
+  Die Äquivalenzklassen von $\Z \times \Z \setminus \{0\}$ bzgl. der Relation $\sim$ aus dem obigen Theorem bilden bezüglich der Oprationen 
+  \[ [a, b] + [c, d] := [ad + cb, bd] \]
+  und
+  \[ [a, b] \cdot [c, d] := [ac, bd] \]
+  einen Körper.
+\end{thm}
+
 Das folgende Theorem war schon im antiken Ägypten und Babylonien bekannt.
 \begin{thm}[Satz von Thales]
 Konstruiert man ein Dreieck aus den beiden Endpunkten des Durchmessers eines Halbkreises (Thaleskreis) und einem weiteren Punkt dieses Halbkreises, so erhält man immer ein rechtwinkliges Dreieck.
